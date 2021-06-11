@@ -1,0 +1,149 @@
+section#featured {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    div[data-container="collection"] {
+        height: 100%;
+        position: absolute;
+        background: $white;
+        padding: 0;
+        div[data-content="posts"] {
+            width: 100%;
+            position: relative;
+            float: left;
+            height: 100%;
+            overflow: hidden;
+            ul {
+                height: 100%;
+                width: 100%;
+                left: 0;
+                white-space: nowrap;
+                transition: 1.5s;
+                transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                position: absolute;
+                li {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    display: inline-block;
+                    text-align: center;
+                    vertical-align: middle;
+                    white-space: normal;
+                    transition: 1s;
+                    background: $black;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        vertical-align: middle;
+                        height: 100%;
+                    }
+                    [data-desktop] {
+                        @media($mobile-screen) {
+                            display: none !important;
+                        }
+                    }
+                    [data-mobile] {
+                        display: none;
+                        @media($mobile-screen) {
+                            display: flex;
+                        }
+                    }
+                    div[data-grid="row"] {
+                        height: 100%;
+                        // display: flex;
+                        background-size: cover !important;
+                        background-repeat: no-repeat;
+                        padding: 1em;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    [data-container="content"] {
+        padding: 0;
+        height: 100%;
+        position: relative;
+        float: left;
+        display: flex;
+        width: 100%;
+        margin: auto;
+        z-index: 10;
+        background: linear-gradient(transparent, rgba($black,0.7));
+        @media ($mobile-screen){
+            width: 100%;
+        }
+        div[data-content="tweets"]{
+            max-width: 300px;
+            margin: auto;
+        }
+        [data-content="title"] {
+            color: $color-2;
+            position: relative;
+            padding: 1em;
+            width: 100%;
+            margin: auto auto 0 auto;
+            max-width: 1000px;
+            @media ($mobile-screen){
+                // padding-bottom: 10em;
+            }
+            [data-content="content-wrapper"] {
+                h1 {
+                    text-align: left;
+                    margin: 0;
+                    color: #FFF;
+                    font-size: 9em;
+                    text-transform: uppercase;
+                    span{
+                        // font-family: $font-1 !important;
+                        // border-bottom: .1em solid $color-3;
+                        margin: auto;
+                    }
+                    @media ($mobile-screen){
+                        font-size: 3.5em;
+                    }
+                }
+                img{
+                    // height: 150px;
+                    width: 100%;
+                    margin: auto;
+                    margin-bottom: 1em;
+                }
+                h4 {
+                    letter-spacing: .1px;
+                    font-size: 1.5em;
+                    margin: 0 0 20px;
+                    @media ($mobile-screen){
+                        font-size: 1em;
+                    }
+                }
+            }
+            div{
+                width: 100%;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                // max-width: 600px;
+                button{
+                    background: $black;
+                    padding: .5em 2em;
+                    border: .2em solid $color-3;
+                    margin: auto;
+                    border-radius: 2em;
+                    span{
+                        color: $white;
+                    }
+                    &:hover{
+                        border: .2em solid $color-4;
+                    }
+                }
+            }
+        }
+        div[data-content="background"]{
+            background: rgba($color-5, .8);
+            height: 100%;
+        }
+    }
+}
