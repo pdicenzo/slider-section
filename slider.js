@@ -1,4 +1,5 @@
 $(document).ready(function(){
+        // slider section with 3 slides
         var featuredList = $('#featured > div[data-container="collection"] > div[data-content="posts"] > ul'),
             slideState = 1;
 
